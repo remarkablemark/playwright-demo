@@ -5,7 +5,8 @@
     "test:ui": "playwright test --ui",
     "test:chrome": "playwright test --project=chromium",
     "test:debug": "playwright test --debug",
-    "codegen": "playwright codegen"
+    "codegen": "playwright codegen",
+    "report": "playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "1.52.0",

@@ -1,12 +1,19 @@
 # playwright-demo
 
-[Playwright](https://playwright.dev/) demo.
+🎭 [Playwright](https://playwright.dev/) demo.
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/)
 
 ## Install
+
+Clone the repository:
+
+```sh
+git clone https://github.com/remarkablemark/playwright-demo.git
+cd playwright-demo
+```
 
 Install the dependencies:
 
@@ -50,6 +57,12 @@ Auto generate tests with Codegen:
 
 ```sh
 npx playwright codegen
+```
+
+Show HTML test reports:
+
+```sh
+npx playwright show-report
 ```
 
 We suggest that you begin by typing:

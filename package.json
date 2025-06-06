@@ -3,15 +3,23 @@
   "scripts": {
     "clean": "rm -rf playwright-report test-results",
     "codegen": "playwright codegen",
+    "lint": "eslint .",
     "report": "playwright show-report",
     "test": "playwright test",
     "test:chrome": "playwright test --project=chromium",
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui"
   },
+  "dependencies": {
+    "@playwright/test": "1.52.0"
+  },
   "devDependencies": {
-    "@playwright/test": "1.52.0",
+    "@eslint/js": "9.28.0",
     "@types/node": "22.15.29",
-    "typescript": "5.8.3"
+    "eslint": "9.28.0",
+    "globals": "16.2.0",
+    "prettier": "3.5.3",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.33.1"
   }
 }

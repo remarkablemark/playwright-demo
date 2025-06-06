@@ -1,19 +1,26 @@
 import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 import playwright from 'eslint-plugin-playwright';
+import prettier from 'eslint-plugin-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-    plugins: { js },
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+      js,
+      prettier,
+    },
     extends: ['js/recommended'],
-  },
-
-  {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     languageOptions: { globals: globals.node },
+    rules: {
+      'prettier/prettier': 'error',
+      'simple-import-sort/exports': 'error',
+      'simple-import-sort/imports': 'error',
+    },
   },
 
   tseslint.configs.recommended,

@@ -1,4 +1,7 @@
-import js from '@eslint/js';
+import { fileURLToPath } from 'node:url';
+
+import { includeIgnoreFile } from '@eslint/compat';
+import eslint from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import playwright from 'eslint-plugin-playwright';
 import prettier from 'eslint-plugin-prettier';
@@ -6,17 +9,21 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
+
 export default defineConfig([
+  includeIgnoreFile(gitignorePath),
+
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
 
     plugins: {
       'simple-import-sort': simpleImportSort,
-      js,
+      eslint,
       prettier,
     },
 
-    extends: ['js/recommended'],
+    extends: ['eslint/recommended'],
 
     languageOptions: {
       globals: globals.node,

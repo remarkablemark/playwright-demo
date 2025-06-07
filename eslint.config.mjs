@@ -9,13 +9,19 @@ import tseslint from 'typescript-eslint';
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+
     plugins: {
       'simple-import-sort': simpleImportSort,
       js,
       prettier,
     },
+
     extends: ['js/recommended'],
-    languageOptions: { globals: globals.node },
+
+    languageOptions: {
+      globals: globals.node,
+    },
+
     rules: {
       'prettier/prettier': 'error',
       'simple-import-sort/exports': 'error',

@@ -12,7 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@playwright/test": "1.55.1"
+    "@playwright/test": "1.56.0"
   },
   "devDependencies": {
     "@commitlint/cli": "20.1.0",
